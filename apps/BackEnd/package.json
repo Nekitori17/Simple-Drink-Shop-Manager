@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "nitro build",
+    "build:vercel": "NITRO_PRESET=vercel nitro build",
     "dev": "nitro dev",
     "preview": "node .output/server/index.mjs"
   },

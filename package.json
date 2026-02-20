@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "pnpm -r --parallel dev",
     "build": "pnpm -r build",
+    "deploy": "vercel --prod",
+    "vercel-build": "pnpm -r build:vercel",
     "db:generate": "pnpm --filter backend exec drizzle-kit generate",
     "db:push": "pnpm --filter backend exec drizzle-kit push",
     "db:studio": "pnpm --filter backend exec drizzle-kit studio"
