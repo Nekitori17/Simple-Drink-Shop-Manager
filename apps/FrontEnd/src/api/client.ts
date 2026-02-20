@@ -21,7 +21,8 @@ async function request<T>(
     headers["Authorization"] = `Bearer ${token}`;
   }
 
-  const url = `${BASE_URL}/api${endpoint}`.replace(/\/+/g, "/");
+  const path = `/api${endpoint}`.replace(/\/+/g, "/");
+  const url = `${BASE_URL}${path}`;
   const response = await fetch(url, {
     ...options,
     headers,
