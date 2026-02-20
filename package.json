@@ -15,8 +15,5 @@
   "keywords": [],
   "author": "Nekitori17",
   "license": "MIT",
-  "packageManager": "pnpm@9.12.0",
-  "engines": {
-    "node": "20.x"
-  }
+  "packageManager": "pnpm@10.29.3"
 }
