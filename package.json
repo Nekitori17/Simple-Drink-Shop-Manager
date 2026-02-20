@@ -7,7 +7,7 @@
     "dev": "pnpm -r --parallel dev",
     "build": "pnpm -r build",
     "deploy": "vercel --prod",
-    "vercel-build": "pnpm -r build:vercel",
+    "vercel-build": "pnpm --filter frontend build && pnpm --filter backend build:vercel && mv apps/BackEnd/.vercel/output .vercel/",
     "db:generate": "pnpm --filter backend exec drizzle-kit generate",
     "db:push": "pnpm --filter backend exec drizzle-kit push",
     "db:studio": "pnpm --filter backend exec drizzle-kit studio"
