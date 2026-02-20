@@ -1,0 +1,17 @@
+{
+  "name": "simple-drink-shop-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "db:generate": "pnpm --filter backend exec drizzle-kit generate",
+    "db:push": "pnpm --filter backend exec drizzle-kit push",
+    "db:studio": "pnpm --filter backend exec drizzle-kit studio"
+  },
+  "keywords": [],
+  "author": "Nekitori17",
+  "license": "MIT",
+  "packageManager": "pnpm@10.29.3"
+}

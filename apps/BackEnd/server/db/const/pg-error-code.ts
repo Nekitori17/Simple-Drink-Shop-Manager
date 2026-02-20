@@ -1,0 +1,30 @@
+// pg-error-codes.ts
+export const PG_ERROR = {
+  // Constraint violations
+  UNIQUE_VIOLATION: "23505",
+  FOREIGN_KEY_VIOLATION: "23503",
+  NOT_NULL_VIOLATION: "23502",
+  CHECK_VIOLATION: "23514",
+
+  // Data errors
+  INVALID_TEXT_REPRESENTATION: "22P02",
+  STRING_DATA_RIGHT_TRUNCATION: "22001",
+  NUMERIC_VALUE_OUT_OF_RANGE: "22003",
+
+  // Schema errors
+  UNDEFINED_TABLE: "42P01",
+  UNDEFINED_COLUMN: "42703",
+  DUPLICATE_TABLE: "42P07",
+  DUPLICATE_COLUMN: "42701",
+
+  // SQL errors
+  SYNTAX_ERROR: "42601",
+  INSUFFICIENT_PRIVILEGE: "42501",
+
+  // Transaction errors
+  SERIALIZATION_FAILURE: "40001",
+  DEADLOCK_DETECTED: "40P01",
+} as const;
+
+export type PgErrorCode =
+  typeof PG_ERROR[keyof typeof PG_ERROR];
