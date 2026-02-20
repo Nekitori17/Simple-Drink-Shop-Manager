@@ -7,7 +7,6 @@
     "preview": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "dotenv": "^17.3.1",
     "drizzle-kit": "^0.31.9",
     "h3": "^1.15.4",
     "nitropack": "^2.12.4",

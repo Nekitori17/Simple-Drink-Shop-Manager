@@ -73,7 +73,7 @@ const router = createRouter({
   ],
 });
 
-router.beforeEach(async (to, _from, next) => {
+router.beforeEach(async (to) => {
   const auth = useAuthStore();
 
   // If token exists but user data not loaded yet, fetch user info
@@ -82,26 +82,26 @@ router.beforeEach(async (to, _from, next) => {
       await auth.fetchMe();
     } catch {
       auth.logout();
-      return next("/login");
+      return "/login";
     }
   }
 
   // Guest-only routes (login, signup)
   if (to.meta.guest && auth.isLoggedIn) {
-    return next("/dashboard");
+    return "/dashboard";
   }
 
   // Auth-required routes
   if (to.meta.requiresAuth && !auth.isLoggedIn) {
-    return next("/login");
+    return "/login";
   }
 
   // Admin-required routes
   if (to.meta.requiresAdmin && !auth.isAdmin) {
-    return next("/dashboard");
+    return "/dashboard";
   }
 
-  next();
+  return true;
 });
 
 export default router;

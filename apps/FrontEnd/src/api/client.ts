@@ -1,6 +1,6 @@
 import type { ApiResponse } from "@/types";
 
-const BASE_URL = `${import.meta.env.BASE_URL}`;
+const BASE_URL = import.meta.env.BASE_URL || "";
 
 function getToken(): string | null {
   return localStorage.getItem("token");
@@ -21,7 +21,8 @@ async function request<T>(
     headers["Authorization"] = `Bearer ${token}`;
   }
 
-  const response = await fetch(`${BASE_URL}${endpoint}`, {
+  const url = `${BASE_URL}/api${endpoint}`.replace(/\/+/g, "/");
+  const response = await fetch(url, {
     ...options,
     headers,
   });
