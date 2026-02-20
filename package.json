@@ -7,7 +7,7 @@
     "dev": "pnpm -r --parallel dev",
     "build": "pnpm --filter frontend build && pnpm --filter backend build",
     "build:vercel": "pnpm --filter frontend build && pnpm --filter backend build:vercel",
-    "vercel-build": "pnpm run build:vercel && rm -rf .vercel/output public && mkdir -p .vercel public && mv apps/BackEnd/.vercel/output .vercel/output && cp -r .vercel/output/* public/",
+    "vercel-build": "pnpm run build:vercel && rm -rf .vercel/output && mkdir -p .vercel && mv apps/BackEnd/.vercel/output .vercel/output",
     "deploy": "vercel --prod",
     "clean": "pnpm -r exec rm -rf dist .output .vercel",
     "db:generate": "pnpm --filter backend exec drizzle-kit generate",
