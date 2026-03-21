@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "drizzle-kit": "^0.31.9",
-    "h3": "^1.15.6",
+    "h3": "^1.15.9",
     "nitropack": "^2.12.4",
     "tsx": "^4.21.0"
   },
